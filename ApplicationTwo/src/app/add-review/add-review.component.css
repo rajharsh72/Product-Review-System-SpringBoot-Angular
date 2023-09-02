@@ -1,0 +1,20 @@
+.content{
+    padding-top: 10px;
+}
+
+.row{
+    display: flex;
+}
+mat-form-field{
+    width: 100%;
+}
+
+.submitBtn{
+    float: right;
+    padding: 0px 25px 20px;
+}
+
+#alert{
+    margin-left: 5px;
+    margin-right: 5px;
+}

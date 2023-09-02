@@ -1,0 +1,45 @@
+
+
+<mat-toolbar>
+    <span><h1>The Community</h1></span>
+    <span class="example-spacer"></span>
+    <span *ngIf="currentUser">Welcome {{currentUser}}</span>
+    &nbsp; &nbsp;
+    <button  type="button" class="btn btn-light" (click)="logout()" >Logout</button>
+</mat-toolbar>
+<div class="bbbootstrap">
+<div class="heading">
+    <h1>List of Products</h1>
+</div></div>
+<div class="container-fluid">
+     <table class="table  table-bordered table-hover table-striped" >
+        <thead class="table-success">
+         
+            <tr class="bg-info ">
+              <!--<th scope="col"></th>-->
+             <th scope="col">Product ID</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Color</th>
+              <th scope="col">Size</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Price</th>
+              <th scope="col">Average Ratings</th>
+              <th scope="col">Reviews</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.productId}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.color}}</td>
+                <td>{{product.size}}</td>
+                <td>{{product.gender}}</td>
+                <td>{{product.price}}</td>
+                <td>{{ calculateAvgRating(product.review) | number:'1.1-1'}}</td>
+                <td><button type="button" routerLink="/approve-review/{{product.productId}}" class="btn btn-outline-success">All Reviews</button>&nbsp;
+</td>
+            </tr>
+          </tbody>
+    </table>
+
+  </div>

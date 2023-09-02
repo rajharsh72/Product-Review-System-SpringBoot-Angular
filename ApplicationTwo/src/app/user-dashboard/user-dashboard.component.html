@@ -1,0 +1,59 @@
+
+
+<mat-toolbar>
+    <span><h1>The Community</h1></span>
+    <span class="example-spacer"></span>
+    <span *ngIf="currentUser">Welcome {{currentUser}}</span>
+    &nbsp; &nbsp;
+    <button  type="button" class="btn btn-light" (click)="logout()" >Logout</button>
+</mat-toolbar>
+
+<div class="bbbootstrap">
+  <div class="container">
+  <form>
+    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+    <input type="text" id="Form_Search" matInput placeholder="Search for products " class="InputBox" name="searchQuery" [(ngModel)]="searchQuery" required="true">
+    <input type="submit" id="Form_Go" class="Button" value="GO" (click)="searchProduct()">
+  </form>
+  
+  </div>
+  </div>
+<div class="container-fluid">
+    <table class="table table-bordered table-hover table-striped" *ngIf="productData && !err">
+        <thead class="table-success">
+            <tr class="bg-info text-dark">
+              <!--<th scope="col"></th>-->
+             <th scope="col">Product ID</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Color</th>
+              <th scope="col">Size</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Price</th>
+              <th scope="col">No. of Reviews</th>
+              <th scope="col">Average Ratings</th>
+              <th scope="col">Reviews</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productData">
+                <td>{{product.productId}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.color}}</td>
+                <td>{{product.size}}</td>
+                <td>{{product.gender}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.review.length}}</td>
+                <td>{{ calculateAvgRating(product.review) | number:'1.1-1' }}</td>
+                <td><button *ngIf="productData!=null" (click)="addReview(product)" type="button"  class="btn btn-outline-success">Add Review</button>&nbsp;
+                    <button  *ngIf="productData!=null" routerLink="/view-review/{{product.productId}}" type="button"  class="btn btn-outline-danger">View</button></td>
+            </tr>
+          </tbody>
+    </table>
+
+    <div *ngIf="message" class="errMsg">
+        <h2>{{message}}</h2>
+    </div>
+    <div *ngIf="err" class="errMsg">
+      <h2>{{err}}</h2>
+  </div>
+</div>

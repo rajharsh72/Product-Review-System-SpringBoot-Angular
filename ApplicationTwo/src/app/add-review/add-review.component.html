@@ -1,0 +1,28 @@
+<div mat-dialog-title class="dialogTitle">
+    <h6>Add review for {{productName}}</h6>
+</div>
+<div class="alert alert-danger" role="alert" id="alert" *ngIf="msg"> 
+   {{msg}}
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="succMsg"> 
+    {{succMsg}}
+   </div>
+
+<form [formGroup]= "reviewForm" >
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Review</mat-label>
+            <input type="text" placeholder="Add your review here" matInput formControlName="review">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Rating</mat-label>
+            <input type="number"  placeholder="Add rating out of 5" matInput formControlName="rating">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="submitBtn">
+        <button mat-raised-button color="primary" type="submit" (click)="addReview()">Add Review</button>
+        <button mat-raised-button color="warn" type="submit" (click)="close()">Close</button>
+    </div>
+</div>
+</form>

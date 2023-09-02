@@ -1,0 +1,53 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+mat-toolbar{
+    background-color:midnightblue;
+}
+
+.heading{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(25,25,112, 0.3); /* Black w/opacity/see-through */
+  color:white;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  }
+
+table{
+  padding: 10px;
+
+}
+
+thead, tbody{
+  text-align: center;}
+
+
+  .bbbootstrap {
+    background-image: url("/assets/bhImage.png") !important;
+    background-size: cover;
+    padding: 180px 0 30px 0;
+  }
+  
+  .bbbootstrap {
+    padding: 40px;
+    margin-bottom: 22px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background-color: #2e9df7;
+    -webkit-box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.25) inset, 0 -15px 15px -15px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.25) inset, 0 -15px 15px -15px rgba(0, 0, 0, 0.25) inset;
+  }
+
+.container-fluid{
+    overflow-y: scroll;
+      height: 350px;
+      width: 100%;
+      position: absolute;
+  }

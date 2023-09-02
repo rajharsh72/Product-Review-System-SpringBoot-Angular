@@ -1,0 +1,22 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+mat-toolbar{
+    background-color:midnightblue;
+}
+
+.heading{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+table{
+  margin-bottom: 50px;
+}
+.container-fluid{
+  overflow-y: scroll;
+    height: 392px;
+    width: 100%;
+    position: absolute;
+}

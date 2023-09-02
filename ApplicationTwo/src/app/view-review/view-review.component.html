@@ -1,0 +1,33 @@
+<mat-toolbar>
+    <span><h1>The Community</h1></span>
+    <span class="example-spacer"></span>
+    <span *ngIf="currentUser">Welcome {{currentUser}}</span>
+    &nbsp; &nbsp;
+    <button  type="button" class="btn btn-light" (click)="back()">back</button>
+</mat-toolbar>
+<div class="row">
+    <div class="col-sm-6">
+      <tbody>
+        <div class=" container mt-4">
+          <h2>Product</h2>
+          Product ID: {{res.productId}}<br>
+          Name: {{res.productName}}<br>
+         </div>
+     </tbody>
+    </div>
+    <div class="col-sm-6">
+      <tbody>
+        <div class=" container mt-4">
+          <h2>Reviews</h2>
+        <div  *ngFor="let items of res.review"  >
+            <div *ngIf="items.state=='true' ">
+                Review: "{{items.review}}"<br>
+                Rating: "{{items.rating}} out of 5" <br>
+                <br>
+         <div *ngIf="items.review===''"><p>No reviews yet..</p></div>
+        </div></div>
+        </div>
+        </tbody>
+    </div>
+   
+  </div>

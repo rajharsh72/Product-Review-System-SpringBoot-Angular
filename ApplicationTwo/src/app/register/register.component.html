@@ -1,0 +1,42 @@
+<div mat-dialog-title class="dialogTitle">
+    Register Here!!
+</div>
+<div class="alert alert-success" *ngIf="successMsg"> 
+    {{successMsg}}
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMsg"> 
+    {{errorMsg}}
+</div>
+<form [formGroup]="registrationForm" (ngSubmit)="register()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>EMAIL</mat-label>
+                <input type="email" matInput placeholder="Enter your email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>FIRST NAME</mat-label>
+                <input type="text" matInput placeholder="Enter your first name" formControlName="first_name">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>LAST NAME</mat-label>
+                <input type="text" matInput placeholder="Enter your last name" formControlName="last_name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>PASSWORD</mat-label>
+                <input type="password" matInput placeholder="Enter your password" formControlName="password">
+            </mat-form-field>
+            <a (click)="openLoginForm()">Already have an account? Log in here</a>
+        </div>
+    </div>
+    
+
+    <div mat-dialog-actions class="submitBtn">
+        <button mat-raised-button color="primary" type="submit">Sign Up</button>
+        <button mat-raised-button color="warn" type="reset">Reset</button>
+        
+    </div>
+</form>

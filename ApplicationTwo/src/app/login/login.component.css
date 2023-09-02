@@ -1,0 +1,22 @@
+.content{
+    padding-top: 10px;
+}
+
+.row{
+    display: flex;
+}
+mat-form-field{
+    width: 100%;
+}
+
+.submitBtn{
+    flex:1;
+    padding: 0px 25px 20px;
+}
+.dialogTitle{
+    font-family: 'Comic Neue', cursive;
+}
+
+a{
+    cursor: pointer;
+}

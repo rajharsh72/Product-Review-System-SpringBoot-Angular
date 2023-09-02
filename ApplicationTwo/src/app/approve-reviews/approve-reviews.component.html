@@ -1,0 +1,40 @@
+<mat-toolbar>
+    <span><h1>The Community</h1></span>
+    <span class="example-spacer"></span>
+    <span *ngIf="currentUser">Welcome {{currentUser}}</span>
+    &nbsp; &nbsp;
+    <button  type="button" class="btn btn-light" (click)="back()">Back</button>
+</mat-toolbar>
+<div class="heading">
+    <h3>Reviews for {{res.productName}}</h3>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-bordered table-hover table-striped" *ngIf="res" >
+        <thead class="table-success">
+         
+            <tr class="bg-info text-dark">
+              <!--<th scope="col"></th>-->
+             <th scope="col">Review ID</th>
+              <th scope="col">Review</th>
+              <th scope="col">State</th>
+              <th scope="col">Ratings</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let review of res.review">
+                <td>{{review.reviewId | slice: 0:5}}</td>
+                <td>{{review.review}}</td>
+                <td>{{review.state}}</td>
+                <td>{{review.rating}} out of 5</td>
+                <td> <button  *ngIf="review.state!='true'" (click)="approveRequest(review.reviewId)" type="submit"  class="btn btn-outline-success">Approve</button>&nbsp;</td>
+                <td> <button  *ngIf="review.state!='false'" (click)="rejectRequest(review.reviewId)" type="submit"  class="btn btn-outline-danger">Reject</button></td>          
+            </tr>
+          </tbody>
+    </table>
+    <div *ngIf="msg" class="errMsg">
+      <h2>{{msg}}</h2>
+  </div>
+    </div>
